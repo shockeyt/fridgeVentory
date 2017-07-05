@@ -1,5 +1,5 @@
 
-<div class="container-fluid">
+<div class="container-fluid fridgeClosed" >
 	<div class="container title">
 		<div class="row">
 			<div class="col-md-12">
@@ -58,18 +58,23 @@
 			</div>
 		</div>
 		<div class="row">
+			<div class="col-sm-12">
+				<a class="openit" href="/show">Open it</a>
+			</div>
+		</div>
+<!-- 		<div class="row">
 			<div class="col-md-12">
 				<ul>
 					<li ng-repeat="items in fridge.fridgeList">
 						<strong><a href="/show/{{items._id}}">{{items.item}}</a></strong>
 						<img class="smallImg" ng-src="{{items.picture}}">
-	<!-- 				<p>{{items.brand}}</p>
+					<p>{{items.brand}}</p>
 						<p>{{items.price}}</p>
-						<p>{{items.quantity}}</p> -->
+						<p>{{items.quantity}}</p>
 						<button class="btn btn-danger delete" ng-click="fridge.deleteItem(items)">✂</button></br>
 					</li></br>
 				</ul>
 			</div>
-		</div>
+		</div> -->
 	</div>
 </div> <!-- container fluid -->

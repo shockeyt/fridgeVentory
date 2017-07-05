@@ -13,7 +13,7 @@ function fridgeRouter ($routeProvider, $locationProvider) {
 			templateUrl: '/templates/fridge-index.html',
 			//controller: 'FlyController'
 		})
-		.when('/show/:id', {
+		.when('/show', {
 			templateUrl: '/templates/fridge-show.html',
 			//controller: 'FlyShowController'
 		});
