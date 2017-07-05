@@ -1,0 +1,49 @@
+<div class="container-fluid">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<a class="goback" href="/">Close it</a>
+			</div>
+		</div>	
+		<!-- <h1>Show route</h1> -->
+
+<!-- 		<div class="slanted2" ng-controller="FridgeShowController as showItems">
+			<div class="row singleNameRow">
+				<div class="col-sm-12 singleName">
+					<h5>{{showItems.singleItem.item}}</h5>
+				</div>
+			</div>
+			<div class="row singleInfo">
+				<div class="col-sm-12 col-md-6 col-lg-6 thumbnail">
+					<img src="{{showItems.singleItem.picture}}">
+				</div>
+				<div class="col-sm-12 col-md-6 col-lg-6 description">
+					<p>Brand: {{showItems.singleItem.brand}}</p>
+					<p>Quantity: {{showItems.singleItem.quantity}}</p>
+					<p>Price: $ {{showItems.singleItem.price}}</p>
+				</div>
+			</div>
+		</div> --> <!-- container slanted -->
+		<div></div>
+			<div class="row rowInventory">
+				<div class="col-md-12 inventory">
+					<h3>What's in my Fridge Now?</h3>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<ul>
+						<li ng-repeat="items in fridge.fridgeList">
+							<strong><a href="/show/{{items._id}}">{{items.item}}</a></strong>
+							<img class="smallImg" ng-src="{{items.picture}}">
+		<!-- 				<p>{{items.brand}}</p>
+							<p>{{items.price}}</p>
+							<p>{{items.quantity}}</p> -->
+							<button class="btn btn-danger delete" ng-click="fridge.deleteItem(items)">✂</button></br>
+						</li></br>
+					</ul>
+				</div>
+			</div>		
+
+	</div> <!-- container -->
+</div> <!-- container fluid -->

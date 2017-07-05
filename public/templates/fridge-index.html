@@ -1,0 +1,75 @@
+
+<div class="container-fluid">
+	<div class="container title">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>FridgeVentory</h1>
+			</div>
+		</div>	
+	</div>
+	<!-- <div ng-controller="FridgeController as fridge"> -->
+	<div class="container slanted" ng-controller="FridgeController as fridge">
+		<div class="row">
+			<div class="col-md-12 fridgebutton1">
+		<!-- {{fly.flyList}} -->
+				<button ng-click="reveal = !reveal" class="btn btn-info showForm">Add an Item</button>
+			</div>
+		</div>
+
+		<div class="row" ng-show="reveal">
+			<form ng-submit="fridge.addItem()">
+				<div class="row">
+					<div class="col-sm-6 form-group">
+					<!-- <label for="item">item</label> -->
+					<input type="text" class="form-control" id="item" ng-model="fridge.newItem.item" placeholder="item">
+					</div>
+					<div class="col-sm-6 form-group">
+					<!-- <label for="brand">brand</label> -->
+					<input type="text" class="form-control" id="brand" ng-model="fridge.newItem.brand" placeholder="brand">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6 form-group">
+					<!-- <label for="quantity">quantity</label> -->
+					<input type="text" class="form-control" id="quantity" ng-model="fridge.newItem.quantity" placeholder="quantity">
+					</div>
+					<div class="col-sm-6 form-group">
+					<!-- <label for="price">price</label> -->
+					<input type="text" class="form-control" id="price" ng-model="fridge.newItem.price" placeholder="price">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12 form-group">
+					<!-- <label for="picture">picture</label> -->
+					<input type="text" class="form-control" id="picture" ng-model="fridge.newItem.picture" placeholder="picture URL">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12 form-group">
+					<input type="submit" class="btn btn-warning engage" value="Submit">
+					</div>
+				</div>
+			</form>
+		</div>
+		
+		<div class="row rowInventory">
+			<div class="col-md-12 inventory">
+				<h3>What's in my Fridge Now?</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<ul>
+					<li ng-repeat="items in fridge.fridgeList">
+						<strong><a href="/show/{{items._id}}">{{items.item}}</a></strong>
+						<img class="smallImg" ng-src="{{items.picture}}">
+	<!-- 				<p>{{items.brand}}</p>
+						<p>{{items.price}}</p>
+						<p>{{items.quantity}}</p> -->
+						<button class="btn btn-danger delete" ng-click="fridge.deleteItem(items)">✂</button></br>
+					</li></br>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div> <!-- container fluid -->
