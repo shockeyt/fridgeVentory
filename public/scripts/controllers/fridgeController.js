@@ -76,11 +76,20 @@ function FridgeController ($http) {
 		.put('/fridge/' + items._id, vm.putItem)
 		.then(function(response) {
 			console.log(response.data);
+			updateItems();
 		});
 		vm.putItem = {};
 		//showForm();
 	}
 
+	function updateItems() {
+		$http
+		.get('/fridge')
+		.then(function(response) {
+			vm.fridgeList = response.data;
+			console.log(vm.fridgeList);
+		});
+	}
 
 //............DELETE...............
 	vm.deleteItem = deleteItem;
