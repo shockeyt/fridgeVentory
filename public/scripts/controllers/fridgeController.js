@@ -30,8 +30,9 @@ FridgeController.$inject = ['$http'];
 function FridgeController ($http) {
 	console.log("controller working");
 	var vm = this;
-	//vm.helloWorld = "initial message";
+	
 
+//..........INDEX................. 
 	vm.all = [];
 	vm.fridgeList = [];
 
@@ -42,6 +43,7 @@ function FridgeController ($http) {
 		console.log(vm.fridgeList);
 	});
 
+//...........POST...................
 	vm.addItem = addItem;
 	vm.newItem = {};
 
@@ -56,6 +58,31 @@ function FridgeController ($http) {
 		vm.newItem = {};
 	}
 
+//............PUT..................
+	vm.editItem = editItem;
+	vm.putItem = {};
+	vm.showForm = showForm;
+	vm.editForm = false;
+
+	function showForm(items) {
+		vm.editForm = !vm.editForm;
+		console.log("edit button clicked");
+		console.log(items._id);
+	}
+
+	function editItem(items) {
+		console.log(items._id);
+		$http
+		.put('/fridge/' + items._id, vm.putItem)
+		.then(function(response) {
+			console.log(response.data);
+		});
+		vm.putItem = {};
+		//showForm();
+	}
+
+
+//............DELETE...............
 	vm.deleteItem = deleteItem;
 
 	function deleteItem(items) {

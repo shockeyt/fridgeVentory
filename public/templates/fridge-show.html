@@ -30,6 +30,21 @@
 					<h3>What's in my Fridge Now?</h3>
 				</div>
 			</div>
+			<!-- EDIT FORM -->
+<!-- 			<div class="row editItems">
+				<div class="col-md-12">
+					<form ng-show="fridge.editForm" ng-submit="fridge.editItem(items)">
+					  <div>
+					    <input type="text" ng-model="fridge.putItem.brand" placeholder="edit brand">
+					    <input type="text" ng-model="fridge.putItem.quantity" placeholder="edit quantity">
+					    <input type="text" ng-model="fridge.putItem.price" placeholder="edit price">
+					    <input type="text" ng-model="fridge.putItem.picture" placeholder="edit picture">
+					    <input type="submit" class="btn btn-success edit" value="Edit Item">
+					  </div>  
+					</form>
+				</div>
+			</div> -->
+			<!-- INVENTORY LIST -->
 			<div class="row">
 				<div class="col-md-12">
 					<ul>
@@ -40,7 +55,21 @@
 							<p>Quantity: {{items.quantity}}</p>
 							<p>Price: ${{items.price}}</p>
 							<p>Type: {{items.types}}</p>
+							<!-- DELETE BUTTON -->
 							<button class="btn btn-danger delete" ng-click="fridge.deleteItem(items)">✂</button></br>
+							<!-- EDIT BUTTON -->
+							<button class="btn btn-success edit" ng-click="fridge.showForm(items)">Edit</button>
+
+							<form ng-show="fridge.editForm" ng-submit="fridge.editItem(items)">
+							  <div>
+							    <input type="text" ng-model="fridge.putItem.brand" placeholder="edit brand">
+							    <input type="text" ng-model="fridge.putItem.quantity" placeholder="edit quantity">
+							    <input type="text" ng-model="fridge.putItem.price" placeholder="edit price">
+							    <input type="text" ng-model="fridge.putItem.picture" placeholder="edit picture">
+							    <input type="submit" class="btn btn-success edit" value="Edit Item">
+							  </div>  
+							</form>
+
 						</li></br>
 					</ul>
 				</div>
