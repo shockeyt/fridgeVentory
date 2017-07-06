@@ -46,9 +46,23 @@
 				</div>
 				<div class="row">
 					<div class="col-sm-12 form-group">
+						<select class="form-control" ng-model="fridge.newItem.types">
+						  <option value="" disabled>- - Select Type - -</option>
+						  <option value="Fruits or Vegetables">Fruit/Vegetables</option>
+						  <option value="Dairy">Diary</option>
+						  <option value="Meats">Meats</option>
+						  <option value="Liquids">Liquids</option>
+						  <option value="Frozen">Frozen</option>
+						  <option value="Other">Other</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12 form-group">
 					<input type="submit" class="btn btn-warning engage" value="Submit">
 					</div>
 				</div>
+
 			</form>
 		</div>
 		

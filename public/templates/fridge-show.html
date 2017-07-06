@@ -36,9 +36,10 @@
 						<li ng-repeat="items in fridge.fridgeList">
 							<strong><a href="/show/{{items._id}}">{{items.item}}</a></strong>
 							<img class="smallImg" ng-src="{{items.picture}}">
-		<!-- 				<p>{{items.brand}}</p>
-							<p>{{items.price}}</p>
-							<p>{{items.quantity}}</p> -->
+							<p>Brand: {{items.brand}}</p>
+							<p>Quantity: {{items.quantity}}</p>
+							<p>Price: ${{items.price}}</p>
+							<p>Type: {{items.types}}</p>
 							<button class="btn btn-danger delete" ng-click="fridge.deleteItem(items)">✂</button></br>
 						</li></br>
 					</ul>

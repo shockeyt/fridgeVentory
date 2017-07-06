@@ -6,7 +6,8 @@ var FridgeSchema = new Schema({
 	brand: String,
 	quantity: Number,
 	price: Number,
-	picture: String
+	picture: String,
+	types: String
 });
 
 var Fridge = mongoose.model('Fridge', FridgeSchema);

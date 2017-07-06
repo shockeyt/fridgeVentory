@@ -46,7 +46,8 @@ app.post('/fridge', function (req, res) {
 		brand: req.body.brand,
 		quantity: req.body.quantity,
 		price: req.body.price,
-		picture: req.body.picture
+		picture: req.body.picture,
+		types: req.body.types
 	});
 	newFridge.save(function (err, item) {
 		if (err) {
@@ -77,6 +78,7 @@ app.put('/fridge/:id', function (req, res) {
 		if (req.body.quantity) updatedFridge.quantity = req.body.quantity;
 		if (req.body.price) updatedFridge.price = req.body.price;
 		if (req.body.picture) updatedFridge.picture = req.body.picture;
+		if (req.body.types) updatedFridge.types = req.body.types;
 
 		updatedFridge.save(function(err) {
 			if (err) res.json({message: 'could not update'});
